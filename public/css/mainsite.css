@@ -1,0 +1,360 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #efefef;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1876f2;
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 47px;
+
+}
+
+.logo{
+    width: 160px;
+    margin-right: 40px;
+}
+
+.navleft , .navright{
+    display: flex;
+    align-items: center;
+
+}
+
+.navleft ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navleft ul li img{
+    width: 28px;
+    margin: 0px 15px ;
+    
+}
+
+.navusericon img{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navusericon{
+    margin: 30px;
+}
+.searchbox{
+    background: #efefef;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+
+}
+
+.searchbox img{
+    width: 18px;
+}
+
+.searchbox input{
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    border: 0;
+
+}
+
+/* isse uppar ka sab is for navigation bar  */
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 5%;
+
+}
+
+
+
+.leftbar{
+    
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    
+    
+}
+
+.rightbar{
+    
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    color: #626262;
+}
+
+.maincontent{
+    flex-basis: 47%;
+
+}
+
+.implinks a , .shortcutlinks a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #626262;
+    width: fit-content;
+
+}
+
+.implinks a img {
+    width: 25px;
+    margin-right: 25px;
+}
+
+#logout{
+    color: #626262;
+    
+}
+
+.implinks{
+    border-bottom: 1px solid #ccc;
+}
+
+.shortcutlinks a img{
+    width: 60px;
+    border-radius: 4px ;
+    margin-right: 15px;
+}
+
+.shortcutlinks p{
+    margin : 25px 0 ;
+    color: #626262;
+    font-weight: 500 ;
+}
+
+
+/* right bar ka css  or event page  */
+
+
+.eventbox {
+
+    position: relative;
+    width: 100%;
+    padding-bottom: 15px;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.eventbox a {
+    
+    font-size: 15px;
+    color: #626262;
+    text-decoration: none;
+}
+
+
+.sidetitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.sidetitle h4{
+    font-weight: 600;
+    font-size: 16px;  
+}
+
+.sidetitle a{
+    text-decoration: none;
+    color: #1876f2;
+    font-size: 12px;
+
+}
+
+.event{
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.leftevent{
+    border-radius: 10px;
+    height: 65px;
+    width: 65px;
+    margin-right: 15px;
+    padding-top: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event p{
+    font-size: 12px;
+}
+
+.event a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #1876f2;
+}
+.leftevent span{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1876f2;
+    color: white;
+    font-size: 10px;
+    padding: 4px 0;
+    
+}
+
+
+.rightcommunities{
+
+    margin-top: 20px;
+
+}
+
+.rightcommunities h5{
+
+    margin-top: 20px;
+}
+
+
+/*  Main cente wala chal rha  */
+/* for post creation wala part  */
+
+.write-post{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    color: #626262;
+}
+
+.userprofile{
+    display: flex;
+    align-items: center;
+}
+
+.userprofile img{
+    width: 55px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.userprofile p{
+    
+    font-weight: 600;
+    color: #626262;
+}
+
+.post-area{
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.post-area textarea{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    resize: none;
+}
+
+.post-links{
+
+    display: flex;
+    margin-top: 10px;
+
+}
+.post-links a{
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    color: #626262;
+    margin-right: 30px;
+    font-size: 13px;
+
+}
+
+.post-links a img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+
+.post-container{
+
+    width: 100%;
+    background: white;
+    border-radius: 6px;
+    padding: 21px;
+    color: #626262;
+    margin: 19px 0; 
+}
+
+.userprofile span{
+    font-size: 12px;
+    color: #626262;
+}
+
+.inside-posts{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.post-img{
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    
+}
+
+.react-icons{
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    
+}
+
+.react-icons div img{ 
+    width: 18px;
+    margin-right: 10px;
+  
+}
+
+.react-icons div {
+    display: inline-flex;
+    align-items: center ;
+    margin-right: 30px;
+
+
+}

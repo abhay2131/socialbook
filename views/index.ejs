@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/3035d848c5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="logo-moto">
+        <h1>FamLinkUP</h1>
+        <p>Lets connect with family and friends in real environment..</p>
+    </div>
+
+    <div class="main-body">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+
+            <form method="post" action="/" onsubmit="return validateForm()">
+
+                <div class="input-group">
+                    <div class="input-field" id="namefield">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="name" placeholder="Name">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-at"></i>
+                        <input type="email" id="email" placeholder="Email">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
+
+                    <p>Already have an account? <a href="login">Click HERE</a></p>
+
+                </div>
+
+                <div class="buttons">
+                    <input type="submit" value="Sign up" style="background-color: rgb(235, 105, 105); color: white; font-size: 16px;;">
+                </div>
+
+                <br><br>
+
+                <a href="mainsite" style="text-decoration: none; color: rgb(23, 108, 23); font-weight: 300; font-size: 16px;">continue to main site</a>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector("form");
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+
+        form.addEventListener("submit", async (e) => {
+            try {
+                const res = await fetch("/api/auth/register", {
+                    method: "POST",
+                    body: JSON.stringify({ name: name.value,email: email.value, password: password.value }),
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                const data = await res.json();
+                
+                if (res.status === 400 || res.status === 401) {
+                    return alert(data.error);
+                }
+            } catch (err) {
+                console.log(err.message);
+            }
+        });
+
+        function validateForm() {
+            var nameValue = name.value;
+            var emailValue = email.value;
+            var passwordValue = password.value;
+
+            if (nameValue === '' || emailValue === "" || passwordValue === '') {
+                alert('Please fill in all the fields before submitting.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
