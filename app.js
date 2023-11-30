@@ -78,9 +78,9 @@ app.post("/p2", (req, res) => {
 
 
 // Handle the 404 errors with a custom template
-app.use((req, res) => {
-    res.status(404).render("404");
-});
+// app.use((req, res) => {
+//     res.status(404).render("404");
+// });
 
 
 
