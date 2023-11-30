@@ -61,7 +61,7 @@ app.get("/mainsite", (req, res) => {
 });
 
 
-app.get("/frirends", (req, res) => {
+app.get("/friends", (req, res) => {
     res.render("friends");
 });
 
@@ -72,6 +72,11 @@ app.get("/community", (req, res) => {
 
 app.get("/events", (req, res) => {
     res.render("events");
+});
+
+
+app.get("/index", (req, res) => {
+    res.render("index");
 });
 
 
@@ -92,9 +97,9 @@ app.post("/p2", (req, res) => {
 
 
 // Handle the 404 errors with a custom template
-// app.use((req, res) => {
-//     res.status(404).render("404");
-// });
+app.use((req, res) => {
+    res.status(404).render("404");
+});
 
 
 
