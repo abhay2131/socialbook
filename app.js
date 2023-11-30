@@ -61,6 +61,20 @@ app.get("/mainsite", (req, res) => {
 });
 
 
+app.get("/frirends", (req, res) => {
+    res.render("friends");
+});
+
+app.get("/community", (req, res) => {
+    res.render("community");
+});
+
+
+app.get("/events", (req, res) => {
+    res.render("events");
+});
+
+
 // POST's Route
 
 app.post("/", (req, res) => {
