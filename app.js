@@ -76,7 +76,7 @@ app.get("/events", (req, res) => {
 
 
 
-app.post("/index", (req, res) => {
+app.get("/index", (req, res) => {
     res.render("index");
 });
 
