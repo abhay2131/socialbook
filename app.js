@@ -6,6 +6,8 @@ require("dotenv").config();
 const express = require("express");
 const ejs = require("ejs")
 const connectDB = require("./db");
+const getsRoute = require("./route/gets");
+const postsRoute = require("./route/post");
 
 
 // creating a instance of the Express application 
@@ -35,65 +37,69 @@ app.set("view engine", "ejs");
 
 
 
-// 
+// api endpoints
 app.use("/api/auth", require("./Auth/route"));
 
-
+// getting the gets route from route directiory
+app.use("/", getsRoute);
 
 //  GET' s Route
-app.get("/", (req, res) => {
-    res.render("index");
-});
+// app.get("/", (req, res) => {
+//     res.render("index");
+// });
 
 
 
-app.get("/p2", (req, res) => {
-    res.render("p2");
-});
+// app.get("/p2", (req, res) => {
+//     res.render("p2");
+// });
 
-app.get("/login", (req, res) => {
-    res.render("login");
-});
-
-
-app.get("/mainsite", (req, res) => {
-    res.render("mainsite");
-});
+// app.get("/login", (req, res) => {
+//     res.render("login");
+// });
 
 
-app.get("/friends", (req, res) => {
-    res.render("friends");
-});
-
-app.get("/community", (req, res) => {
-    res.render("community");
-});
+// app.get("/mainsite", (req, res) => {
+//     res.render("mainsite");
+// });
 
 
-app.get("/events", (req, res) => {
-    res.render("events");
-});
+// app.get("/friends", (req, res) => {
+//     res.render("friends");
+// });
+
+// app.get("/community", (req, res) => {
+//     res.render("community");
+// });
+
+
+// app.get("/events", (req, res) => {
+//     res.render("events");
+// });
 
 
 
-app.get("/index", (req, res) => {
-    res.render("index");
-});
+// app.get("/index", (req, res) => {
+//     res.render("index");
+// });
+
+// Setting the post route
+app.use("/", postsRoute);
 
 
 // POST's Route
 
-app.post("/", (req, res) => {
-    res.redirect("login");
-})
+// app.post("/", (req, res) => {
+//     res.redirect("login");
+// })
 
-app.post("/login", (req, res) => {
-    res.redirect("p2");
-});
+// app.post("/login", (req, res) => {
+//     res.redirect("p2");
+// });
 
-app.post("/p2", (req, res) => {
-    res.redirect("mainsite");
-});
+// app.post("/p2", (req, res) => {
+//     res.redirect("mainsite");
+// });
 
 
 
