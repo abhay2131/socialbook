@@ -8,7 +8,7 @@ const ejs = require("ejs")
 const connectDB = require("./db");
 const getsRoute = require("./route/gets");
 const postsRoute = require("./route/post");
-
+const cors = require("cors")
 
 // creating a instance of the Express application 
 const app = express();
@@ -29,6 +29,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // serving the static files to the server
 app.use(express.static("public"));
+
+
+// cors
+
+app.use(cors())
 
 
 

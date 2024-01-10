@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 
-router.get("", (req, res) => {
+router.get("/", (req, res) => {
     res.render("index");
 });
 
@@ -35,10 +35,18 @@ router.get("/events", (req, res) => {
 });
 
 
+router.get("/password", (req, res) =>{
+    res.render("password")
+})
 
-router.get("/index", (req, res) => {
-    res.render("index");
-});
+
+router.get("/signout", (req, res) => {
+    res.render("signout");
+})
+
+router.get("/last", (req, res) => {
+    res.render("last");
+})
 
 
 
